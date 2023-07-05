@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Стварыць карыстальніка</title>
+    <style>
+        form {
+            width: 50%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        label {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        input[type="number"], input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-bottom: 2px solid gray;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<form action="#" th:action="@{/ListCreateUser}" th:object="${user}" method="post">
+    <label for="firstName">Першае імя</label>
+    <input type="text" th:field="*{firstName}" id="firstName" placeholder="Першае імя">
+    <label for="lastName">Другое імя</label>
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Другое імя">
+    <input type="submit" value="Стварыць карыстальніка">
+</form>
+</body>
+</html>
